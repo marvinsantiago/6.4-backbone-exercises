@@ -3,3 +3,30 @@
 @import 'bourbon';
 @import 'neat';
 @import 'border-box';
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.container {
+    @include outer-container(350px);
+    border: 2px solid #c4c2c2;
+    padding: 2em;
+    background-color: #ead7d7;
+    h3 {
+        font-size: 1.5em;
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 0.5em;
+    }
+}
+.new-entry label, input, button {
+    @include span-columns(12);
+    padding: 10px 0;
+}
+.submit {
+    @include button;
+}
+.phonenumber {
+    margin-bottom: 2em;
+}
