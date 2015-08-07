@@ -29,7 +29,7 @@ var DirectoryView = Backbone.View.extend({
     var address = this.$('.address').val();
     var phone = this.$('.phonenumber').val();
 
-    this.model.create({
+    this.model.save({
       firstname: firstName,
       lastname: lastName,
       address: address,
