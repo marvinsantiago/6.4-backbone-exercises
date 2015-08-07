@@ -1,2 +1,2 @@
 var post = new Post();
-var blogs = new BlogsView({model: post});
+var blogs = new AppView({collection: post});

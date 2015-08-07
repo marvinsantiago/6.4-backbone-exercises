@@ -7,7 +7,7 @@ var Post = Backbone.Model.extend({
   idAttribute: '_id',
   defaults: {
     title: '',
-    comment: '',
+    blog: '',
     create: new Date(),
   },
 });
