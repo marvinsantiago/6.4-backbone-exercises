@@ -10,7 +10,3 @@ var Person = Backbone.Model.extend({
   },
 });
 
-var Directory = Backbone.Collection.extend({
-  model: Person,
-  url: 'http://tiny-lr.herokuapp.com/collections/ms-directory',
-});

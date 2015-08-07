@@ -40,6 +40,8 @@ var DirectoryView = Backbone.View.extend({
     this.$('.lastname').val('');
     this.$('.address').val('');
     this.$('.phonenumber').val('');
+
+    this.model = new Person();
   },
 
 });
