@@ -8,6 +8,5 @@ var Post = Backbone.Model.extend({
   defaults: {
     title: '',
     blog: '',
-    create: new Date(),
   },
 });

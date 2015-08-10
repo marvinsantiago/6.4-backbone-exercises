@@ -1,7 +1,21 @@
-// var BlogView = Backbone.View.extend({
-//   tagName: 'li',
-//   template: AppTemplates.blog,
-// });
+var BlogView = Backbone.View.extend({
+  tagName: 'li',
+  template: AppTemplates.sidebar,
+
+  el: '#sidebar',
+
+  initialize: function() {
+    this.render();
+  },
+
+  render: function() {
+    var html = this.template(this.collection.toJSON());
+    this.$el.html(html);
+
+    console.info('render');
+    return this;
+  },
+});
 
 var AppView = Backbone.View.extend({
   template: AppTemplates.app,
@@ -9,14 +23,10 @@ var AppView = Backbone.View.extend({
   el: '#target',
 
   initialize: function() {
-    this.render();
-  },
+    var _this = this;
+    var html = this.template(_this.collection.first().toJSON());
+    _this.$el.html(html);
 
-  render: function() {
-    var html = this.template();
-
-    this.$el.html(html);
-
-    console.info('render');
+    return this;
   },
 });
