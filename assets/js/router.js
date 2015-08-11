@@ -13,6 +13,7 @@ var AppRouter = Backbone.Router.extend({
     var view = new BlogView({
       collection: this.collection,
     });
+    this.collection.fetch();
   },
 });
 
