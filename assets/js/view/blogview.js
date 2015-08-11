@@ -26,7 +26,7 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
     var _this = this;
-    var html = _this.template(_this.collection.toJSON());
+    var html = _this.template(_this.collection.first().toJSON());
     _this.$el.html(html);
 
     return this;

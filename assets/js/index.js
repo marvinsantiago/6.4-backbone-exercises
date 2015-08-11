@@ -1,6 +1,10 @@
 // Instantiating
-var post = new Post();
-var blogs = new AppView({collection: post});
+var blogList = new Blogs();
+var blogs;
+
+blogList.fetch().then(function() {
+  blogs = new AppView({collection: blogList});
+});
 
 //Initating the router
 var router = new AppRouter();
