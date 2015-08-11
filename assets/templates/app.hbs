@@ -1,7 +1,8 @@
-
+    {{#each this as |post|}}
             <label>Title</label>
-            <p>{{ title }}</p>
+            <p>{{ post.title }}</p>
 
             <label>Blog</label>
-            <p>{{ blog }}</p>
+            <p>{{ post.blog }}</p>
+    {{/each}}
 
