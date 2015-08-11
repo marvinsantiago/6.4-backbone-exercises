@@ -1,6 +1,6 @@
 // View for each individual item
 var BlogView = Backbone.View.extend({
-  tagName: 'li',
+
   template: AppTemplates.sidebar,
 
   el: '#sidebar',
