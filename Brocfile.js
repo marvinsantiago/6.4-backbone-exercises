@@ -23,7 +23,9 @@ var appJs = concat(assetsWithTemplates, {
     'js/setup.js',
     'templates/**/*.js',
     'js/model/blogmodel.js',
+    'js/collection/blogcollection.js',
     'js/view/blogview.js',
+    'js/router.js',
 
     'js/index.js',
     /* Your app files here */

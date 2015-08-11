@@ -1,3 +1,4 @@
+// View for each individual item
 var BlogView = Backbone.View.extend({
   tagName: 'li',
   template: AppTemplates.sidebar,
@@ -17,6 +18,7 @@ var BlogView = Backbone.View.extend({
   },
 });
 
+// View for all
 var AppView = Backbone.View.extend({
   template: AppTemplates.app,
 
@@ -24,7 +26,7 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
     var _this = this;
-    var html = this.template(_this.collection.first().toJSON());
+    var html = _this.template(_this.collection.first().toJSON());
     _this.$el.html(html);
 
     return this;
