@@ -24,9 +24,13 @@ var AppView = Backbone.View.extend({
   el: '#target',
 
   initialize: function() {
-    var _this = this;
-    var html = _this.template(_this.model.toJSON());
-    _this.$el.html(html);
+    this.render();
+  },
+
+  render: function() {
+
+    var html = this.template(this.collection.toJSON());
+    this.$el.html(html);
 
     return this;
   },

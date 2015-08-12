@@ -8,8 +8,8 @@ var AppRouter = Backbone.Router.extend({
   },
 
   routes: {
-    '': 'index',
-    ':id': 'view',
+    // '': 'index',
+    ':id/': 'view',
   },
 
   // index: function() {
@@ -26,7 +26,7 @@ var AppRouter = Backbone.Router.extend({
     };
 
     showList();
-    this.listenTo(this.collection, 'sync', showList);
+    this.listenTo(this.collection, 'sync add', showList);
   },
 });
 

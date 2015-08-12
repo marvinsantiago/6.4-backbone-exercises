@@ -1,12 +1,8 @@
 // Instantiating
 var blogList = new Blogs();
-var blogs;
-var sidebar;
 
-blogList.fetch().then(function() {
-  blogs = new AppView({collection: blogList});
-  sidebar = new BlogView({collection: blogList});
-});
+// var blogs;
+// var sidebar;
 
 // Initating the router
 var router = new AppRouter();
