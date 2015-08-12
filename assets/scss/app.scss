@@ -3,3 +3,39 @@
 @import 'bourbon';
 @import 'neat';
 @import 'border-box';
+
+.outer-container {
+    @include outer-container(900px);
+}
+#sidebar {
+    @include span-columns(2);
+    li {
+        padding: 30px;
+        border-bottom: 0.2em solid black;
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    li:hover {
+        background: gray;
+    }
+    .title {
+        text-decoration: none;
+    }
+}
+
+
+}
+#titlebar {
+    @include span-columns(8);
+}
+    .title {
+        font-weight: bold;
+        font-size: 1.7em;
+        padding-top: 20px;
+    }
+    .blog {
+        font-size: 1.2em;
+        padding-top: 20px;
+    }
+
