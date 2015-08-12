@@ -9,7 +9,7 @@ var AppRouter = Backbone.Router.extend({
 
   routes: {
     // '': 'index',
-    ':id/': 'view',
+    ':id': 'view',
   },
 
   // index: function() {
@@ -17,16 +17,17 @@ var AppRouter = Backbone.Router.extend({
   // },
 
   view: function(id) {
+    var _this = this;
     var showList = function() {
-      var model = this.collection.get(id);
+      var model = _this.collection.get(id);
 
-      new AppView({
-      model: model,
-    });
+      _this.currentView = new AppView({
+        model: model,
+      });
     };
 
     showList();
-    this.listenTo(this.collection, 'sync add', showList);
+    this.listenTo(this.collection, 'sync', showList);
   },
 });
 

@@ -1,13 +1,13 @@
 // View for each individual item
 var BlogView = Backbone.View.extend({
-
+  tagName: 'li',
   template: AppTemplates.sidebar,
 
   el: '#sidebar',
 
   initialize: function() {
     this.render();
-    this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.collection, 'sync add', this.render);
   },
 
   render: function() {
@@ -25,11 +25,17 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+
   },
 
   render: function() {
+    var data = {};
 
-    var html = this.template(this.collection.toJSON());
+    if (this.model && this.model.toJSON) {
+      data = this.model.toJSON();
+    }
+
+    var html = this.template(data);
     this.$el.html(html);
 
     return this;
