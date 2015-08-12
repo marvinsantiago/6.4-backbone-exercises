@@ -7,13 +7,12 @@ var BlogView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+    this.listenTo(this.collection, 'sync', this.render);
   },
 
   render: function() {
     var html = this.template(this.collection.toJSON());
     this.$el.html(html);
-
-    console.info('render');
     return this;
   },
 });
@@ -26,7 +25,7 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
     var _this = this;
-    var html = _this.template(_this.collection.first().toJSON());
+    var html = _this.template(_this.model.toJSON());
     _this.$el.html(html);
 
     return this;

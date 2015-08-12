@@ -8,7 +8,7 @@ blogList.fetch().then(function() {
   sidebar = new BlogView({collection: blogList});
 });
 
-//Initating the router
+// Initating the router
 var router = new AppRouter();
 
 // Starting backbone history
