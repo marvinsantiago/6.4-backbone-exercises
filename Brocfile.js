@@ -24,8 +24,10 @@ var appJs = concat(assetsWithTemplates, {
     'templates/**/*.js',
     'js/model/bm-model.js',
     'js/collection/bm-collection.js',
+    'js/view/form.js',
 
     /* Your app files here */
+    'js/index.js',
   ],
   outputFile: 'app.js',
 });
