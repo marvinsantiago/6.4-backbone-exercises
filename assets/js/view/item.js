@@ -1,5 +1,5 @@
 var ItemView = Backbone.View.extend({
-  tagName: 'li',
+  // tagName: 'li',
   template: AppTemplates.item,
 
   el: '#bookmark-list',

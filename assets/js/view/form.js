@@ -6,7 +6,6 @@ var FormView = Backbone.View.extend({
     this.listenTo(this.collection, 'sync add change', this.render);
     this.render();
 
-    this.collection.fetch();
   },
 
   events: {
@@ -15,16 +14,7 @@ var FormView = Backbone.View.extend({
 
   render: function() {
     var html = this.template();
-    var _this = this;
     this.$el.html(html);
-
-    this.collection.forEach(function(bookmarks) {
-      var childView = new ItemView({
-        model: bookmarks,
-      });
-      _this.$el.find('#bookmark-list')
-        .append(childView.render().$el);
-    });
 
     return this;
   },
