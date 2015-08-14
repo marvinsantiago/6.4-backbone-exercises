@@ -3,3 +3,34 @@
 @import 'bourbon';
 @import 'neat';
 @import 'border-box';
+
+body {
+    @include outer-container(980px);
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background: gray;
+}
+#target {
+    @include span-columns(12);
+    padding: 10px 0;
+}
+#bookmark-section {
+    @include span-columns(12);
+    #bookmark-list {
+        @include span-columns(6);
+        padding-top: 10px;
+    }
+    #tag {
+        @include span-columns(6);
+        padding-top: 10px;
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        a:hover {
+            background: blue;
+        }
+    }
+    #title {
+        padding-bottom: 10px;
+    }
+}
