@@ -2,7 +2,9 @@ var AppRouter = Backbone.Router.extend({
   initialize: function() {
     this.collection = new AllBookmarks();
     this.itemview = new ItemView({collection: this.collection});
+    this.tagview = new TagView({collection: this.collection});
     $('#bookmark-list').html(this.itemview.render().el);
+    $('#tag').html(this.tagview.render().el);
 
     this.collection.fetch();
   },
