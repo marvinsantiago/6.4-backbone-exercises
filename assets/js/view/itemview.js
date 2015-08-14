@@ -1,16 +1,13 @@
 var ItemView = Backbone.View.extend({
   // tagName: 'li',
   template: AppTemplates.item,
-
-  el: '#bookmark-list',
-
-  initialize: function() {
-    this.listenTo(this.collection, 'sync add change', this.render);
-    this.render();
-  },
+  className: 'item-view',
 
   render: function() {
-    var html = this.template(this.collection.toJSON());
+    var html = this.template(this.collection.map(function(model) {
+      return model.toJSON();
+    }));
+
     this.$el.html(html);
 
     return this;

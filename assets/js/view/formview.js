@@ -1,11 +1,8 @@
 var FormView = Backbone.View.extend({
   template: AppTemplates.form,
-  el: '#target',
+  className: 'form-view',
 
   initialize: function() {
-    this.listenTo(this.collection, 'sync add change', this.render);
-    this.render();
-
   },
 
   events: {
