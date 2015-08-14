@@ -13,7 +13,7 @@ var AppRouter = Backbone.Router.extend({
   },
 
   index: function() {
-    this.listView = new IndexView({collection: this.collection});
+    this.listView = new ItemView({collection: this.collection});
 
     $('#bookmark-list').html(this.listView.render().el);
   },
@@ -25,7 +25,7 @@ var AppRouter = Backbone.Router.extend({
       var contact = _this.contacts.get(id);
       _this.listView = new DetailView({model: Bookmark});
 
-      $('#bookmark-list').html(this.listView.render().el);
+      $('#bookmark-list').html(_this.listView.render().el);
     };
 
     attachDetail();

@@ -1,6 +1,4 @@
-{{#each this as |Bookmark|}}
-    <li>
-        <p>URL: {{ Bookmark.title }}</p>
-    </li>
+{{#each this as |bookmark|}}
+    <li>{{ bookmark.url }}</li>
 {{/each}}
 

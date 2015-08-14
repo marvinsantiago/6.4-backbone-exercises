@@ -13,7 +13,7 @@ var FormView = Backbone.View.extend({
   },
 
   render: function() {
-    var html = this.template();
+    var html = this.template(this.collection);
     this.$el.html(html);
 
     return this;
@@ -27,6 +27,11 @@ var FormView = Backbone.View.extend({
     var tag = this.$el.find('.tag').val();
 
     this.collection.create({url: url, title: title, tag: tag});
+
+    this.$('.url').val('');
+    this.$('.title').val('');
+    this.$('.tag').val('');
+    this.collection = new Bookmark();
 
   },
 });
