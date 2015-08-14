@@ -10,28 +10,32 @@ var AppRouter = Backbone.Router.extend({
   },
 
   routes: {
-    '': 'index',
-    'post/:id': 'showPost',
+    // '': 'index',
+    '(:tag)': 'tag',
   },
 
-  index: function() {
-    this.listView = new ItemView({collection: this.collection});
+  // index: function() {
+  //   this.listView = new ItemView({collection: this.collection});
 
-    $('#bookmark-list').html(this.listView.render().el);
-  },
+  //   $('#bookmark-list').html(this.listView.render().el);
+  // },
 
-  showPost: function(id) {
-    var _this = this;
+  // tag: function(tag) {
+  //   var _this = this;
 
-    var attachDetail = function() {
-      var contact = _this.contacts.get(id);
-      _this.listView = new DetailView({model: Bookmark});
+  //   var tagSearch = function() {
+  //     var filteredTags = _this.collection.filter(function(model) {
+  //       if (!tag) {
+  //         return model.get('tag').indexOf(tag) > -1;
+  //       }
+  //     });
 
-      $('#bookmark-list').html(_this.listView.render().el);
-    };
+  //     this.tagView = new TagView({collection: filteredTags});
+  //     $('#tag').html(this.tagView.render().el);
+  //   };
 
-    attachDetail();
-    this.listenTo(this.collection, 'sync', attachDetail);
-  },
+  //   tagSearch();
+  //   this.listenTo(this.collection, 'sync', tagSearch);
+  // },
 
 });

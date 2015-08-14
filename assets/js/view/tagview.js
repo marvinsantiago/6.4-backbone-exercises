@@ -4,7 +4,7 @@ var TagView = Backbone.View.extend({
   el: '#tag',
 
   initialize: function() {
-    this.listenTo(this.collection, 'sync add', this.render);
+    this.listenTo(this.collection, 'sync add change', this.render);
     this.render();
   },
 
