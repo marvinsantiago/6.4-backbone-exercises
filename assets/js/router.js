@@ -20,22 +20,22 @@ var AppRouter = Backbone.Router.extend({
   //   $('#bookmark-list').html(this.listView.render().el);
   // },
 
-  // tag: function(tag) {
-  //   var _this = this;
+  tag: function(tag) {
+    var _this = this;
 
-  //   var tagSearch = function() {
-  //     var filteredTags = _this.collection.filter(function(model) {
-  //       if (!tag) {
-  //         return model.get('tag').indexOf(tag) > -1;
-  //       }
-  //     });
+    var tagSearch = function() {
+      var filteredTags = _this.collection.filter(function(model) {
+        if (!tag) {
+          return model.get('tag').indexOf(tag) > -1;
+        }
+      });
 
-  //     this.tagView = new TagView({collection: filteredTags});
-  //     $('#tag').html(this.tagView.render().el);
-  //   };
+      this.tagView = new TagView({collection: filteredTags});
+      $('#tag').html(this.tagView.render().el);
+    };
 
-  //   tagSearch();
-  //   this.listenTo(this.collection, 'sync', tagSearch);
-  // },
+    tagSearch();
+    this.listenTo(this.collection, 'sync', tagSearch);
+  },
 
 });
