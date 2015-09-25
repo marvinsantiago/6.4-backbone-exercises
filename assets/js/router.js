@@ -11,10 +11,7 @@ var AppRouter = Backbone.Router.extend({
   },
 
   routes: {
-    '(#)': 'index',
-    new: 'newBlog',
-    ':id': 'BlogList',
-    ':id/edit': 'edit',
+    ' ': 'index',
   },
 
   index: function() {
@@ -22,7 +19,7 @@ var AppRouter = Backbone.Router.extend({
 
     var attachDetail = function() {
       var model = _this.collection.first();
-      _this.indexPost = new BlogView({model: model});
+      _this.indexPost = new DetailView({model: model});
       $('#target').html(_this.indexPost.render().el);
     };
 
