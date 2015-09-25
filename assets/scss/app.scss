@@ -3,3 +3,41 @@
 @import 'bourbon';
 @import 'neat';
 @import 'border-box';
+
+body {
+   @include outer-container(900px);
+    padding: 40px;
+}
+.main {
+    @include span-columns(12);
+    padding: 20px;
+    background-color: yellow;
+    #sidebar {
+        @include span-columns(3);
+        @include omega();
+        padding: 10px;
+        background-color: white;
+        p:nth-child(2n) {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .form-view {
+    @include span-columns(8);
+    @include omega();
+
+    padding: 0 20px;
+
+    label input textarea button{
+        @include span-columns(12);
+
+    }
+
+    }
+
+
+}
+
+
+
