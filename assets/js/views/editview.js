@@ -1,5 +1,6 @@
 var EditView = Backbone.View.extend({
   template: AppTemplates.edit,
+  className: 'edit',
 
   events: {
     'click .save': 'save',

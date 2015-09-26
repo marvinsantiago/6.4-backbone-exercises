@@ -12,6 +12,8 @@ var AppRouter = Backbone.Router.extend({
 
   routes: {
     ' ': 'index',
+    ':id': 'view',
+    ':id/edit': 'edit',
   },
 
   index: function() {
@@ -25,6 +27,34 @@ var AppRouter = Backbone.Router.extend({
 
     attachDetail();
     this.listenTo(this.collection, 'sync', attachDetail);
+  },
+
+  view: function(id) {
+    var _this = this;
+    var showList = function() {
+      var model = _this.collection.get(id);
+
+      _this.currentView = new DetailView({
+        model: model,
+      });
+      $('#target').html(_this.currentView.render().el);
+    };
+
+    showList();
+    this.listenTo(this.collection, 'sync', showList);
+  },
+
+  edit: function(id) {
+    var _this = this;
+
+    var showEdit = function() {
+      var model = _this.collection.get(id);
+      _this.editView = new EditView({model: model});
+      $('#target').html(_this.editView.render().el);
+    };
+
+    showEdit();
+    this.listenTo(this.collection, 'sync', showEdit);
   },
 
 });

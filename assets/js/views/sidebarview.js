@@ -13,4 +13,5 @@ var SidebarView = Backbone.View.extend({
 
     return this;
   },
+
 });

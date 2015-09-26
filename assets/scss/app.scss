@@ -29,9 +29,15 @@ body {
 
     padding: 0 20px;
 
-    label input textarea button{
+    label input textarea {
         @include span-columns(12);
-
+        padding: 10px 0;
+    }
+    button {
+        @include span-columns(6);
+    }
+    textarea {
+        margin: 10px 0;
     }
 
     }
