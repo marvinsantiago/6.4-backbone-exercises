@@ -20,9 +20,9 @@ var FormView = Backbone.View.extend({
     ev.preventDefault();
 
     var title = this.$el.find('.title').val();
-    var body = this.$el.find('.body').val();
+    var blog = this.$el.find('.body').val();
 
-    this.collection.create({title: title, body: body});
+    this.collection.create({title: title, blog: body});
 
     this.$('.title').val('');
     this.$('.body').val('');

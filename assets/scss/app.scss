@@ -7,6 +7,7 @@
 body {
    @include outer-container(900px);
     padding: 40px;
+    font-size: 1.1rem;
 }
 .main {
     @include span-columns(12);
@@ -22,6 +23,15 @@ body {
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        li {
+            padding: 5px 0;
+            a {
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        }
     }
     .form-view {
     @include span-columns(8);
@@ -34,6 +44,9 @@ body {
         padding: 10px 0;
     }
     button {
+        @include span-columns(6);
+    }
+    input {
         @include span-columns(6);
     }
     textarea {
