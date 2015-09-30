@@ -1,0 +1,10 @@
+<ul>
+    {{#each this as |blog|}}
+        <li>
+           <a href="#{{blog._id}}">
+                <p>{{blog.title}}</p>
+                <p>{{blog.blog}}</p>
+            </a>
+        </li>
+    {{/each}}
+</ul>
