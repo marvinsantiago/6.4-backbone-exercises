@@ -28,16 +28,16 @@ var EditView = Backbone.View.extend({
   save: function(ev) {
     ev.preventDefault();
     var title = this.$el.find('.title').val();
-    var post = this.$el.find('.post').val();
-    this.model.save({title: title, post: post}).then(function() {
-      router.navigate('this.model.id', {trigger: true});
+    var blog = this.$el.find('.blog').val();
+    this.model.save({title: title, blog: blog}).then(function() {
+      router.navigate('', {trigger: true});
     });
   },
 
   delete: function(ev) {
     ev.preventDefault();
     this.model.destroy().then(function() {
-      router.navigate('', {trigger: true});
+      // router.navigate('', {trigger: true});
     });
   },
 });
